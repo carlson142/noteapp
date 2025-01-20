@@ -4,8 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { signIn, auth } from "@/app/auth";
+import { redirect } from "next/navigation";
 
-function LoginPage() {
+async function LoginPage() {
+  const session = await auth();
+  if (session) redirect("/");
+
   return (
     <div className="bg-primaryPeach h-screen w-screen flex flex-col justify-center items-center">
       <div className="h-3/4 w-96 bg-white rounded-lg p-5 flex flex-col justify-center items-center">
@@ -23,13 +28,21 @@ function LoginPage() {
         {/* NOTE Button group */}
         <div className="flex w-full justify-evenly">
           {/* GitHub */}
-          <Button
-            variant="default"
-            className="flex items-center justify-center"
+
+          <form
+            action={async () => {
+              "use server";
+              await signIn();
+            }}
           >
-            <FaGithub />
-            GitHub
-          </Button>
+            <Button
+              variant="default"
+              className="flex items-center justify-center"
+            >
+              <FaGithub />
+              GitHub
+            </Button>
+          </form>
 
           {/* Google */}
           <Button
