@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <div>
       Home page
-      {/* TODO: FIX ME!!! зробити окремим компонентом, бо б'є помилку */}
+      {/* TODO: FIX ME!!! зробити окремим компонентом, бо б'є помилку блять! */}
       <button>Sign Out</button>
     </div>
   );
