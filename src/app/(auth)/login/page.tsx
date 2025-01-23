@@ -1,4 +1,3 @@
-import { FaFeatherPointed } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
@@ -6,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { signIn, auth } from "@/app/auth";
 import { redirect } from "next/navigation";
+import { Logo } from "@/appComponents/Logo/Logo";
 
 async function LoginPage() {
   const session = await auth();
@@ -14,14 +14,15 @@ async function LoginPage() {
   return (
     <div className="bg-primaryPeach h-screen w-screen flex flex-col justify-center items-center">
       <div className="h-3/4 w-96 bg-white rounded-lg p-5 flex flex-col justify-center items-center">
-        <div className="flex items-center text-2xl">
-          <FaFeatherPointed className="text-primaryDarkViolet" />
-          <span className="ml-1 font-macondo">Notes</span>
-        </div>
+        <Logo />
 
         <h1 className="font-bold text-2xl">Welcome to Notes</h1>
 
         <h3 className="text-gray-400">Please log in to continue</h3>
+
+        {/* NOTE CREDENTIALS */}
+
+        <form></form>
 
         <span className="text-gray-400">Or log in with:</span>
 

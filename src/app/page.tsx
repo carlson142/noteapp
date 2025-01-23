@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "./auth";
-import { signOut } from "next-auth/react";
 import { LogOutButton } from "@/appComponents/LogOutButton/LogOutButton";
+import { Logo } from "@/appComponents/Logo/Logo";
 
 export default async function Home() {
   const session = await auth();
@@ -11,9 +11,10 @@ export default async function Home() {
   }
 
   return (
-    <div className="h-screen w-screen flex flex-col">
-      <nav className="flex justify-between">
-        <div>Logo</div>
+    <div className="flex flex-col w-screen h-screen bg-primaryPeach">
+      <nav className="flex items-center self-center justify-between w-4/5 p-4 mt-2 bg-white rounded-xl">
+        <Logo />
+        <span>Hello, {session.user?.name}!</span>
         <LogOutButton />
       </nav>
       Home page

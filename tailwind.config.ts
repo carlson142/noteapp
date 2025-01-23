@@ -6,6 +6,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/appComponents/**/*.{js,ts,jsx,tsx,mdx}", // папка з не ShadcnUI компонентами
   ],
   theme: {
     extend: {
@@ -17,6 +18,7 @@ export default {
         // My custom colors
         // TODO: Add here my custom colors!
         primaryPeach: "#FFE6E6",
+        primaryPink: "#E1AFD1",
         pirmaryPurple: "#AD88C6",
         primaryDarkViolet: "#7469B6",
 
